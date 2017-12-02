@@ -216,6 +216,7 @@ class Install extends Install_Controller
 		$config['cachedir'] = "";
 		$config['char_set'] = "utf8";
 		$config['dbcollat'] = "utf8_general_ci";
+		$config['stricton'] = FALSE;
 		// load the co
 		$this->db = $this->load->database($config, TRUE);
 

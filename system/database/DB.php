@@ -149,6 +149,10 @@ function &DB($params = '', $active_record_override = NULL)
 	if (isset($params['stricton']) && $params['stricton'] == TRUE)
 	{
 		$DB->query('SET SESSION sql_mode="STRICT_ALL_TABLES"');
+	} else {
+		// on recent versions of mysql strict mode is on by default
+		// so it has to be explicitly turned off
+		$DB->query('SET SESSION sql_mode=""');
 	}
 
 	return $DB;
