@@ -133,7 +133,11 @@ if (!defined('BASEPATH'))
 		current_page = id;
 		next = parseInt(id+1);
 		jQuery("html, body").stop(true,true);
-		if(!noscroll) jQuery.scrollTo('.panel', 430, {'offset':{'top':-6}});
+		//if(!noscroll) jQuery.scrollTo('.panel', 430, {'offset':{'top':-6}});
+		if(!noscroll) {
+			var target = $('.panel');
+			$('html, body').stop().animate({ scrollTop: target.offset().top }, 430);
+		}
 
 		if(pages[id].loaded !== true) {
 			jQuery('#page .inner img.open').css({'opacity':'0'});
@@ -296,7 +300,9 @@ if (!defined('BASEPATH'))
 	function togglePagelist()
 	{
 		jQuery('#pagelist').slideToggle();
-		jQuery.scrollTo('#pagelist', 300);
+		//jQuery.scrollTo('#pagelist', 300);
+		var target = $('#pagelist');
+		$('html, body').stop().animate({ scrollTop: target.offset().top }, 300);
 	}
 
 
@@ -347,7 +353,9 @@ if (!defined('BASEPATH'))
 					e.preventDefault();
 					button_down_code = setInterval(function() {
 						if (button_down) {
-							jQuery.scrollTo("+=13");
+							//jQuery.scrollTo("+=13");
+							var current = document.documentElement.scrollTop;
+							$('html, body').stop().animate({ scrollTop: current+13 }, 2);
 						}
 					}, 20);
 				}
@@ -357,7 +365,9 @@ if (!defined('BASEPATH'))
 					e.preventDefault();
 					button_down_code = setInterval(function() {
 						if (button_down) {
-							jQuery.scrollTo("-=13");
+							//jQuery.scrollTo("-=13");
+							var current = document.documentElement.scrollTop;
+							$('html, body').stop().animate({ scrollTop: current-13 }, 2);
 						}
 					}, 20);
 

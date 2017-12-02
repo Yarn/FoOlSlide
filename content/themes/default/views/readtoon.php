@@ -108,7 +108,9 @@ if (!defined('BASEPATH'))
 		next = parseInt(id+1);
 		jQuery("html, body").stop(true,true);
 
-        jQuery.scrollTo('.page-' + current_page);
+		//jQuery.scrollTo('.page-' + current_page);
+		var target = $('.page-' + current_page);
+		$('html, body').stop().animate({ scrollTop: target.offset().top });
 
 		if(!nohash) History.pushState(null, null, base_url+'page/' + (current_page + 1));
 		document.title = gt_page+' ' + (current_page+1) + ' :: ' + title;
@@ -211,7 +213,9 @@ if (!defined('BASEPATH'))
 					e.preventDefault();
 					button_down_code = setInterval(function() {
 						if (button_down) {
-							jQuery.scrollTo("+=13");
+							//jQuery.scrollTo("+=13");
+							var current = document.documentElement.scrollTop;
+							$('html, body').stop().animate({ scrollTop: current+13 }, 2);
 						}
 					}, 20);
 				}
@@ -221,7 +225,9 @@ if (!defined('BASEPATH'))
 					e.preventDefault();
 					button_down_code = setInterval(function() {
 						if (button_down) {
-							jQuery.scrollTo("-=13");
+							//jQuery.scrollTo("-=13");
+							var current = document.documentElement.scrollTop;
+							$('html, body').stop().animate({ scrollTop: current-13 }, 2);
 						}
 					}, 20);
 
