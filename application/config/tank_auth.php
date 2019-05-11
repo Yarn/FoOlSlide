@@ -140,8 +140,8 @@ $config['recaptcha_private_key'] = '';
 */
 $config['db_table_prefix'] = '';
 
-if (file_exists(FCPATH . "config.php"))
-	require(FCPATH . "config.php");
+if (file_exists(FCPATH . "config/config.php"))
+	require(FCPATH . "config/config.php");
 
 /* End of file tank_auth.php */
 /* Location: ./application/config/tank_auth.php */

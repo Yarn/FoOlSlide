@@ -57,8 +57,8 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-if (file_exists(FCPATH . "config.php"))
-	require(FCPATH . "config.php");
+if (file_exists(FCPATH . "config/config.php"))
+	require(FCPATH . "config/config.php");
 
 
 /* End of file database.php */

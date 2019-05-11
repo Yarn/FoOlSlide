@@ -359,8 +359,8 @@ $config['rewrite_short_tags'] = FALSE;
  */
 $config['proxy_ips'] = '';
 
-if (file_exists(FCPATH . "config.php"))
-	require(FCPATH . "config.php");
+if (file_exists(FCPATH . "config/config.php"))
+	require(FCPATH . "config/config.php");
 
 
 /*

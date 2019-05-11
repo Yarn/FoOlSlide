@@ -10,7 +10,7 @@ class Install extends Install_Controller
 		parent::__construct();
 
 		// make sure people don't get here if FoOlSlide is already installed
-		if (file_exists("config.php"))
+		if (file_exists("config/config.php"))
 			redirect('admin');
 		$this->viewdata["controller_title"] = _("Installation");
 	}
@@ -244,7 +244,7 @@ class Install extends Install_Controller
 
 		// check if a manual config file must be made manually (due to no permissions on FoOlSlide root)
 		$manual_config = FALSE;
-		if (!write_file('config.php', $config))
+		if (!write_file('config/config.php', $config))
 		{
 			$manual_config = TRUE;
 		}
